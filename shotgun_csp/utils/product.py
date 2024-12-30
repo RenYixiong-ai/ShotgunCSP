@@ -3,7 +3,6 @@
 
 
 import numpy as np
-from numpy import product
 
 
 class Product(object):
@@ -43,7 +42,7 @@ class Product(object):
         lens = [len(p) for p in paras]
         if repeat > 1:
             lens = lens * repeat
-        size = product(lens)
+        size = np.product(lens)
         acc_list = [np.floor_divide(size, lens[0])]
         for len_ in lens[1:]:
             acc_list.append(np.floor_divide(acc_list[-1], len_))
